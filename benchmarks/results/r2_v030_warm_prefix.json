@@ -1,0 +1,188 @@
+{
+  "label": "r2_v030_final",
+  "timestamp": "2026-11-25T11:07:01+0800",
+  "model": "baidu/ERNIE-5.5-Flash-Preview",
+  "memory_after_bench": {
+    "spark1": {
+      "total_gib": 121.69,
+      "used_gib": 115.15,
+      "free_gib": 8.89,
+      "buff_cache_gib": 1.42,
+      "avail_gib": 6.54
+    },
+    "spark2": {
+      "total_gib": 121.69,
+      "used_gib": 114.81,
+      "free_gib": 7.03,
+      "buff_cache_gib": 4.43,
+      "avail_gib": 6.88
+    }
+  },
+  "single_stream": {
+    "c1_thinking_t06": {
+      "ttft_ms": 276.85,
+      "decode_tok_s": 52.23,
+      "e2e_tok_s": 50.89,
+      "prompt_tokens": 58,
+      "completion_tokens": 512,
+      "elapsed_s": 10.061,
+      "dspark_accept_pct": 43.19,
+      "dspark_tokens_per_step": 4.02,
+      "drafts": 127
+    },
+    "c1_code_t00": {
+      "ttft_ms": 200.16,
+      "decode_tok_s": 61.72,
+      "e2e_tok_s": 60.19,
+      "prompt_tokens": 48,
+      "completion_tokens": 448,
+      "elapsed_s": 7.443,
+      "dspark_accept_pct": 59.11,
+      "dspark_tokens_per_step": 5.14,
+      "drafts": 87
+    },
+    "c1_chat_t06": {
+      "ttft_ms": 252.17,
+      "decode_tok_s": 28.91,
+      "e2e_tok_s": 28.51,
+      "prompt_tokens": 52,
+      "completion_tokens": 448,
+      "elapsed_s": 15.716,
+      "dspark_accept_pct": 19.15,
+      "dspark_tokens_per_step": 2.34,
+      "drafts": 191
+    }
+  },
+  "concurrency_scaling_greedy": [
+    {
+      "concurrency": 1,
+      "wall_s": 8.04,
+      "total_completion_tokens": 448,
+      "aggregate_tok_s": 55.69,
+      "per_stream_decode_tok_s": 57.34,
+      "mean_ttft_ms": 249.6,
+      "dspark_accept_pct": 54.71,
+      "dspark_tokens_per_step": 4.83,
+      "drafts": 94
+    },
+    {
+      "concurrency": 2,
+      "wall_s": 10.51,
+      "total_completion_tokens": 896,
+      "aggregate_tok_s": 85.27,
+      "per_stream_decode_tok_s": 46.93,
+      "mean_ttft_ms": 341.44,
+      "dspark_accept_pct": 56.9,
+      "dspark_tokens_per_step": 4.98,
+      "drafts": 180
+    },
+    {
+      "concurrency": 4,
+      "wall_s": 24.16,
+      "total_completion_tokens": 1792,
+      "aggregate_tok_s": 74.18,
+      "per_stream_decode_tok_s": 26.16,
+      "mean_ttft_ms": 372.08,
+      "dspark_accept_pct": 37.3,
+      "dspark_tokens_per_step": 3.61,
+      "drafts": 499
+    },
+    {
+      "concurrency": 8,
+      "wall_s": 33.73,
+      "total_completion_tokens": 3584,
+      "aggregate_tok_s": 106.25,
+      "per_stream_decode_tok_s": 19.32,
+      "mean_ttft_ms": 549.65,
+      "dspark_accept_pct": 37.97,
+      "dspark_tokens_per_step": 3.66,
+      "drafts": 982
+    }
+  ],
+  "concurrency_scaling_sampled": [
+    {
+      "concurrency": 2,
+      "wall_s": 10.51,
+      "total_completion_tokens": 896,
+      "aggregate_tok_s": 85.28,
+      "per_stream_decode_tok_s": 44.61,
+      "mean_ttft_ms": 298.49,
+      "dspark_accept_pct": 55.67,
+      "dspark_tokens_per_step": 4.9,
+      "drafts": 184
+    },
+    {
+      "concurrency": 4,
+      "wall_s": 23.94,
+      "total_completion_tokens": 1792,
+      "aggregate_tok_s": 74.86,
+      "per_stream_decode_tok_s": 26.79,
+      "mean_ttft_ms": 366.48,
+      "dspark_accept_pct": 39.15,
+      "dspark_tokens_per_step": 3.74,
+      "drafts": 482
+    },
+    {
+      "concurrency": 8,
+      "wall_s": 32.4,
+      "total_completion_tokens": 3584,
+      "aggregate_tok_s": 110.62,
+      "per_stream_decode_tok_s": 18.3,
+      "mean_ttft_ms": 439.34,
+      "dspark_accept_pct": 38.03,
+      "dspark_tokens_per_step": 3.66,
+      "drafts": 982
+    }
+  ],
+  "context_prefill": [
+    {
+      "mode": "cold_7k",
+      "prompt_tokens": 6995,
+      "ttft_ms": 3473.86,
+      "prefill_tok_s": 2013.6,
+      "decode_tok_s": 42.87
+    },
+    {
+      "mode": "cold_28k",
+      "prompt_tokens": 27901,
+      "ttft_ms": 14119.98,
+      "prefill_tok_s": 1976.0,
+      "decode_tok_s": 33.02
+    },
+    {
+      "mode": "warm_28k_prefix_hit",
+      "prompt_tokens": 27904,
+      "ttft_ms": 501.64,
+      "effective_tok_s": 55625.5,
+      "decode_tok_s": 39.01
+    }
+  ],
+  "quality_gate": {
+    "passed": 4,
+    "total": 4,
+    "all_passed": true,
+    "checks": {
+      "math_mod100": {
+        "passed": true,
+        "answer": 10,
+        "decode_tok_s": 59.44
+      },
+      "code_lru_ttl": {
+        "passed": true,
+        "decode_tok_s": 60.4,
+        "stderr": ""
+      },
+      "strict_json": {
+        "passed": true,
+        "raw": "{\"cluster\":\"dual-spark\",\"nodes\":2,\"protocols\":[\"rocev2\",\"nvlink-c2c\"]}"
+      },
+      "parallel_tool_call": {
+        "passed": true,
+        "nodes_called": [
+          "spark1",
+          "spark2"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Local cluster environment (copy .env.example -> .env)
+.env
+.env.*
+!.env.example
+
+# Python caches & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local benchmark outputs & logs (keep committed reference baselines in benchmarks/results/)
+*.log
+benchmarks/results/local_*.json
+tmp/
+dist/
+build/
+
+# OS / Editor files
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/

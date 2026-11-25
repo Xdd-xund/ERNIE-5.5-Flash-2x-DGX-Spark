@@ -1,0 +1,15 @@
+# Keep Docker build context minimal (~60 KB: Dockerfile + patches/) and secret-free
+.git
+.gitignore
+.env
+.env.*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.log
+*.md
+LICENSE
+benchmarks/
+docs/
+scripts/
+tests/
